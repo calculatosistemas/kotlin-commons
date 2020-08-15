@@ -6,7 +6,6 @@ import br.com.calculato.commons.time.hoursPart
 import br.com.calculato.commons.time.secondsPart
 import org.apache.commons.lang3.time.DurationFormatUtils
 import java.time.Duration
-import java.util.Base64
 
 /**
  * Concatenates an "s" to [this] text for plural when [number] is so
