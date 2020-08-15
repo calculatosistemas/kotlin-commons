@@ -1,8 +1,8 @@
 package br.com.calculato.commons
 
 import br.com.calculato.commons.text.emptyString
-import br.com.calculato.commons.text.format
 import br.com.calculato.commons.text.plural
+import br.com.calculato.commons.time.format
 import br.com.calculato.commons.time.hoursPart
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe

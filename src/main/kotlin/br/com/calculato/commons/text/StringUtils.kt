@@ -26,13 +26,3 @@ fun String.plural(duration: Duration) = this + if (duration.hoursPart != 1.toLon
  * Typesafe creation of an empty string
  */
 fun emptyString() = ""
-
-/**
- *Converts [this] duration to time format [HH:mm:ss]
- */
-fun Duration.format(): String =
-    DurationFormatUtils.formatDuration(
-        toMillis(), "HH:mm${if (secondsPart != 0.toLong()) {
-            ":ss"
-        } else emptyString()}"
-    )

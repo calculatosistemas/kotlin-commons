@@ -6,6 +6,16 @@ import java.time.Duration
 import kotlin.math.absoluteValue
 
 /**
+ *Converts [this] duration to time format [HH:mm:ss]
+ */
+fun Duration.format(): String =
+    DurationFormatUtils.formatDuration(
+        toMillis(), "HH:mm${if (secondsPart != 0.toLong()) {
+            ":ss"
+        } else emptyString()}"
+    )
+
+/**
  * Returns seconds part of the duration
  */
 val Duration.secondsPart: Long
