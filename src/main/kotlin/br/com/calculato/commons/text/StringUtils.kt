@@ -13,7 +13,7 @@ import java.time.Duration
 fun String.plural(number: Number) = this + if (number != 1) "s" else emptyString()
 
 /**
- * Concatenates an "s" to [this] text for plural when [int] is so
+ * Concatenates an "s" to [this] text for plural when [Int] is so
  */
 fun String.plural(numero: Int) = this + if (numero != 1) "s" else emptyString()
 
