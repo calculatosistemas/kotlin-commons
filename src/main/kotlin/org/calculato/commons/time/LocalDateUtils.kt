@@ -11,7 +11,7 @@ import java.time.temporal.TemporalAmount
 /**
  * Creates a new LocalDateTime with Brazil's timezone
  */
-fun dateTimeinBrazil(): LocalDateTime = LocalDateTime.now(ZoneId.of("Brazil/East"))
+fun dateTimeInBrazil(): LocalDateTime = LocalDateTime.now(ZoneId.of("Brazil/East"))
 
 /**
  * Sets this date with the last day of this month

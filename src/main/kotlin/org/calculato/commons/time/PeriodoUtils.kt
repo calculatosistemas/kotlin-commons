@@ -10,7 +10,7 @@ fun Int.lastPeriodoDate() = firstPeriodoDate().withLastDayOfMonth()
 /**
  * Returns the first date of Periodo
  */
-fun Int.firstPeriodoDate() = LocalDate.of(periodoYear(), actualPeriodoMonth(), 1)
+fun Int.firstPeriodoDate(): LocalDate = LocalDate.of(periodoYear(), actualPeriodoMonth(), 1)
 
 /**
  * Returns the month of Periodo not includes 13th

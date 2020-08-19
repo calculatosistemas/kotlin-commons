@@ -3,8 +3,6 @@
 package org.calculato.commons.text
 
 import org.calculato.commons.time.hoursPart
-import org.calculato.commons.time.secondsPart
-import org.apache.commons.lang3.time.DurationFormatUtils
 import java.time.Duration
 
 /**
