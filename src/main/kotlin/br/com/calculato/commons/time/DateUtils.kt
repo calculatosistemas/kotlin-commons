@@ -4,6 +4,7 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.time.temporal.TemporalAdjusters
 
 /**
@@ -18,3 +19,8 @@ fun dateOf(year: Int, month: Int, day: Int) = LocalDate.of(year, month, day)
 fun dateInLastDayOf(year: Int, month: Int) = LocalDate.of(year, month, 1).withLastDayOfMonth()
 
 fun timeOf(hour: Int, minute: Int, seconds: Int = 0) = LocalTime.of(hour, minute, seconds)
+
+/**
+ *Converts [this] date to Brazil's format [dd:MM:yyyy]
+ */
+fun LocalDate.formatBR(): String = format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
