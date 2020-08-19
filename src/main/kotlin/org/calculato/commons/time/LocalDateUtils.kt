@@ -4,6 +4,7 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.Period
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.time.temporal.TemporalAdjusters
 import java.time.temporal.TemporalAmount
 
@@ -59,3 +60,8 @@ class LocalDateRange(
  * Custom operator for the LocalDate range
  */
 operator fun LocalDate.rangeTo(other: LocalDate) = LocalDateRange(this, other)
+
+/**
+ *Converts [this] date to Brazil's format [dd:MM:yyyy]
+ */
+fun LocalDate.formatBR(): String = format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
