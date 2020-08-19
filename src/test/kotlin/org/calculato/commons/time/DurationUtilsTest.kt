@@ -1,8 +1,5 @@
-package br.com.calculato.commons
+package org.calculato.commons.time
 
-import br.com.calculato.commons.time.hoursPart
-import br.com.calculato.commons.time.minutesPart
-import br.com.calculato.commons.time.secondsPart
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import java.time.Duration

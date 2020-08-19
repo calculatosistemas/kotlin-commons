@@ -1,8 +1,5 @@
-package br.com.calculato.commons
+package org.calculato.commons.number
 
-import br.com.calculato.commons.number.div
-import br.com.calculato.commons.number.toDecimal
-import br.com.calculato.commons.number.zero
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import java.math.BigDecimal

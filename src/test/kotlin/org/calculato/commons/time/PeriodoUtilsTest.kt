@@ -1,10 +1,10 @@
-package br.com.calculato.commons
+package org.calculato.commons.time
 
-import br.com.calculato.commons.time.actualPeriodoMonth
-import br.com.calculato.commons.time.firstPeriodoDate
-import br.com.calculato.commons.time.lastPeriodoDate
-import br.com.calculato.commons.time.periodoMonth
-import br.com.calculato.commons.time.periodoYear
+import org.calculato.commons.time.actualPeriodoMonth
+import org.calculato.commons.time.firstPeriodoDate
+import org.calculato.commons.time.lastPeriodoDate
+import org.calculato.commons.time.periodoMonth
+import org.calculato.commons.time.periodoYear
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe

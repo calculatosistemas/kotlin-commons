@@ -1,4 +1,4 @@
-package br.com.calculato.commons.number
+package org.calculato.commons.number
 
 import java.math.BigDecimal
 import java.math.RoundingMode

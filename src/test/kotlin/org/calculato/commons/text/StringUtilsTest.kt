@@ -1,9 +1,7 @@
-package br.com.calculato.commons
+package org.calculato.commons.text
 
-import br.com.calculato.commons.text.emptyString
-import br.com.calculato.commons.text.plural
-import br.com.calculato.commons.time.format
-import br.com.calculato.commons.time.hoursPart
+import org.calculato.commons.time.format
+import org.calculato.commons.time.hoursPart
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import java.time.Duration

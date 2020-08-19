@@ -1,15 +1,15 @@
-package br.com.calculato.commons
+package org.calculato.commons.time
 
-import br.com.calculato.commons.time.dateInLastDayOf
-import br.com.calculato.commons.time.dateOf
-import br.com.calculato.commons.time.timeOf
-import br.com.calculato.commons.time.withLastDayOfMonth
+import org.calculato.commons.time.dateInLastDayOf
+import org.calculato.commons.time.dateOf
+import org.calculato.commons.time.timeOf
+import org.calculato.commons.time.withLastDayOfMonth
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import java.time.LocalDate
 import java.time.LocalTime
 
-class DateUtilsTest : StringSpec({
+class LocalDateUtilsTest : StringSpec({
     "withLastDayOfMonth"{
         LocalDate.of(2020, 4, 27).withLastDayOfMonth() shouldBe LocalDate.of(2020, 4, 30)
     }

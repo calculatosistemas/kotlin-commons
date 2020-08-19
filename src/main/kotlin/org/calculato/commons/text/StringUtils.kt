@@ -1,9 +1,9 @@
 @file:Suppress("unused")
 
-package br.com.calculato.commons.text
+package org.calculato.commons.text
 
-import br.com.calculato.commons.time.hoursPart
-import br.com.calculato.commons.time.secondsPart
+import org.calculato.commons.time.hoursPart
+import org.calculato.commons.time.secondsPart
 import org.apache.commons.lang3.time.DurationFormatUtils
 import java.time.Duration
 

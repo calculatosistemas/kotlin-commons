@@ -1,4 +1,4 @@
-package br.com.calculato.commons.time
+package org.calculato.commons.time
 
 import java.time.LocalDate
 

@@ -1,4 +1,4 @@
-package br.com.calculato.commons
+package org.calculato.commons.utils
 
 import java.util.UUID
 
