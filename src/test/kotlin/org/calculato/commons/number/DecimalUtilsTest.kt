@@ -23,5 +23,11 @@ class DecimalUtilsTest : StringSpec() {
             Duration.parse("PT12H33M").toDecimal() shouldBe 12.55.toBigDecimal().setScale(6)
             Duration.ofMinutes(90).toDecimal() shouldBe 1.5.toBigDecimal().setScale(6)
         }
+        "BigDecimal::formatMonetario" {
+            13345.98.toBigDecimal().formatMonetario() shouldBe "13.345,98"
+            13345.989.toBigDecimal().formatMonetario() shouldBe "13.345,99"
+            13345.983.toBigDecimal().formatMonetario() shouldBe "13.345,98"
+            13345.98345.toBigDecimal().format() shouldBe "13.345,983"
+        }
     }
 }
