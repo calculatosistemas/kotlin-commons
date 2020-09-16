@@ -16,15 +16,25 @@ fun Int.firstPeriodoDate(): LocalDate = LocalDate.of(periodoYear(), actualPeriod
  * Returns the month of Periodo not includes 13th
  */
 fun Int.actualPeriodoMonth(): Int =
-    with(this % 100) { if (this in 1..12) this else error("$this is not an actual periodo month") }
+        with(this % 100) { if (this in 1..12) this else error("$this is not an actual periodo month") }
 
 /**
  * Returns the month of Periodo includes 13th
  */
 fun Int.periodoMonth(): Int =
-    with(this % 100) { if (this in 1..13) this else error("Cannot convert $this to month") }
+        with(this % 100) { if (this in 1..13) this else error("Cannot convert $this to month") }
 
 /**
  * Returns the year of Periodo
  */
 fun Int.periodoYear() = div(100)
+
+/**
+ * Check if [this] date is in [periodo]
+ */
+fun LocalDate.isInPeriodo(periodo: Int): Boolean = this in periodo.firstPeriodoDate()..periodo.lastPeriodoDate()
+
+/**
+ * Returns the periodo form of [this] date
+ */
+fun LocalDate.getPeriodo(): Int = year * 100 + month.value
