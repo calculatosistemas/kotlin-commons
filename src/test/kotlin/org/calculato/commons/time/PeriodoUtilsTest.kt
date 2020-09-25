@@ -93,4 +93,9 @@ class PeriodoUtilsTest : StringSpec({
             it.isInPeriodo(202004) shouldBe false
         }
     }
+    "formatPeriodoBR"{
+        202006.formatPeriodoBR() shouldBe "junho/2020"
+        201901.formatPeriodoBR() shouldBe "janeiro/2019"
+        202102.formatPeriodoBR() shouldBe "fevereiro/2021"
+    }
 })
