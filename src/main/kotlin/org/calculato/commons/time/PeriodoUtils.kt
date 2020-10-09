@@ -1,6 +1,8 @@
 package org.calculato.commons.time
 
 import java.time.LocalDate
+import java.time.Month
+import java.time.format.TextStyle
 
 /**
  * Returns the final date of Periodo
@@ -44,8 +46,3 @@ fun LocalDate.isInPeriodo(periodo: Int): Boolean = this in periodo.firstPeriodoD
  * Returns the periodo form of [this] date
  */
 fun LocalDate.getPeriodo(): Int = year * 100 + month.value
-
-/**
- * Returns the periodo normalizes of [this]
- */
-fun Int.formatPeriodoBR() = "${Month.of(periodoMonth()).getDisplayName(TextStyle.FULL, BRAZIL)}/${periodoYear()}"
