@@ -1,5 +1,6 @@
 package org.calculato.commons.time
 
+import io.kotest.assertions.asClue
 import org.calculato.commons.time.actualPeriodoMonth
 import org.calculato.commons.time.firstPeriodoDate
 import org.calculato.commons.time.lastPeriodoDate
@@ -80,5 +81,21 @@ class PeriodoUtilsTest : StringSpec({
         periodoJun20.periodoYear() shouldBe 2020
         periodoDec21.periodoYear() shouldBe 2021
         periodoError.periodoYear() shouldBe 1800
+    }
+
+    "getPeriodo"{
+        LocalDate.of(2020,2,3).getPeriodo() shouldBe 202002
+        LocalDate.of(2019,12,1).getPeriodo() shouldBe 201912
+    }
+    "isInPeriodo"{
+        LocalDate.of(2020,3,1).asClue {
+            it.isInPeriodo(202003) shouldBe true
+            it.isInPeriodo(202004) shouldBe false
+        }
+    }
+    "formatPeriodoBR"{
+        202006.formatPeriodoBR() shouldBe "junho/2020"
+        201901.formatPeriodoBR() shouldBe "janeiro/2019"
+        202102.formatPeriodoBR() shouldBe "fevereiro/2021"
     }
 })
