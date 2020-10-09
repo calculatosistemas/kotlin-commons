@@ -1,7 +1,9 @@
 package org.calculato.commons.number
 
+import org.calculato.commons.time.BRAZIL
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.text.NumberFormat
 import java.time.Duration
 
 fun zero(): BigDecimal = BigDecimal.ZERO
@@ -26,3 +28,16 @@ fun Short.toBigDecimal(): BigDecimal = BigDecimal.valueOf(this.toLong())
  * Returns [this] BigDecimal with brazilian monetary scale format
  */
 fun BigDecimal.monetary() = setScale(2, RoundingMode.HALF_EVEN)
+
+/**
+ * Converts [this] decimal to Brazil's format monetary
+ */
+fun BigDecimal.formatMonetario(): String =
+    NumberFormat.getInstance(BRAZIL).format(this.setScale(2, RoundingMode.HALF_EVEN))
+
+/**
+ * Converts [this] decimal to Brazil's format decimal
+ */
+fun BigDecimal.format(): String =
+    NumberFormat.getInstance(BRAZIL).format(this)
+
