@@ -15,3 +15,14 @@ operator fun BigDecimal.div(other: BigDecimal): BigDecimal = this.divide(other, 
  * Converts [this] clock time to decimal number
  */
 fun Duration.toDecimal(): BigDecimal = (this.toMinutes().toBigDecimal() / 60.toBigDecimal())
+
+
+/**
+ * Creates a BigDecimal value from [this] Short
+ */
+fun Short.toBigDecimal(): BigDecimal = BigDecimal.valueOf(this.toLong())
+
+/**
+ * Returns [this] BigDecimal with brazilian monetary scale format
+ */
+fun BigDecimal.monetary() = setScale(2, RoundingMode.HALF_EVEN)

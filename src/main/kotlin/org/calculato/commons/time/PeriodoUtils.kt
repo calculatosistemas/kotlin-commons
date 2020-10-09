@@ -1,6 +1,8 @@
 package org.calculato.commons.time
 
 import java.time.LocalDate
+import java.time.Month
+import java.time.format.TextStyle
 
 /**
  * Returns the final date of Periodo
@@ -28,3 +30,9 @@ fun Int.periodoMonth(): Int =
  * Returns the year of Periodo
  */
 fun Int.periodoYear() = div(100)
+
+
+/**
+ * Returns [this] periodo as brazilian medium text
+ */
+fun Int.formatPeriodoBR() = "${Month.of(periodoMonth()).getDisplayName(TextStyle.FULL, BRAZIL)}/${periodoYear()}"
