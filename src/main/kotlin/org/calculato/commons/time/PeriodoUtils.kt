@@ -46,3 +46,8 @@ fun LocalDate.isInPeriodo(periodo: Int): Boolean = this in periodo.firstPeriodoD
  * Returns the periodo form of [this] date
  */
 fun LocalDate.getPeriodo(): Int = year * 100 + month.value
+
+/**
+ * Returns the periodo from of [ano] and [mes]
+ */
+fun periodoOf(ano: Int, mes: Int): Int = ano * 100 + mes
