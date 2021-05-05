@@ -7,6 +7,7 @@ import io.kotest.matchers.shouldBe
 import java.time.Duration
 
 private val duration = Duration.parse("PT12H33M53S")
+private enum class Enum { PESSOA_FISICA }
 
 class StringUtilsTest : StringSpec() {
     init {
@@ -26,6 +27,14 @@ class StringUtilsTest : StringSpec() {
         "durationFormatToString"{
             Duration.parse("PT12H33M").format() shouldBe "12:33"
             duration.format() shouldBe "12:33:53"
+        }
+        "normalizeText"{
+            Enum.PESSOA_FISICA.normalizeText() shouldBe "pessoa fisica"
+        }
+        "Int.format"{
+            1.format(3) shouldBe "001"
+            15.format(3) shouldBe "015"
+            115.format(3) shouldBe "115"
         }
     }
 }
