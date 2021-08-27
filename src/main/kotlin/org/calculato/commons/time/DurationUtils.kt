@@ -1,5 +1,7 @@
 package org.calculato.commons.time
 
+import java.math.BigDecimal
+import java.math.RoundingMode
 import org.apache.commons.lang3.time.DurationFormatUtils
 import org.calculato.commons.text.emptyString
 import java.time.Duration
@@ -64,3 +66,11 @@ fun Long.hours(andMinutes: Long): Duration = Duration.ofHours(this).plusMinutes(
  * Gets a Duration instance with [this] number of minutes
  */
 fun Long.minutes(): Duration = Duration.ofMinutes(this)
+
+/**
+ *  Converts [this] decimal to Duration
+ */
+fun BigDecimal.hoursToDuration(): Duration = Duration.ofMinutes(
+    (setScale(0, RoundingMode.DOWN).longValueExact() * 60) +
+        (remainder(BigDecimal.ONE) * 60.toBigDecimal()).setScale(0, RoundingMode.HALF_EVEN).toInt()
+)

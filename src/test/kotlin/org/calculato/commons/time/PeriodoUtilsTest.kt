@@ -94,8 +94,16 @@ class PeriodoUtilsTest : StringSpec({
         }
     }
     "formatPeriodoBR"{
-        202006.formatPeriodoBR() shouldBe "junho/2020"
-        201901.formatPeriodoBR() shouldBe "janeiro/2019"
-        202102.formatPeriodoBR() shouldBe "fevereiro/2021"
+        202006.formatPeriodoBR() shouldBe "Junho/2020"
+        201901.formatPeriodoBR() shouldBe "Janeiro/2019"
+        202102.formatPeriodoBR() shouldBe "Fevereiro/2021"
+    }
+    "periodoOf"{
+        periodoOf(2020,1) shouldBe 202001
+        periodoOf(2020,3) shouldBe 202003
+        periodoOf(2020,10) shouldBe 202010
+        periodoOf(2020,11) shouldBe 202011
+        periodoOf(2020,12) shouldBe 202012
+        periodoOf(2020,13) shouldBe 202013
     }
 })
