@@ -13,7 +13,9 @@ fun zero(): BigDecimal = BigDecimal.ZERO
 /**
  * Operator Div Standard to scale 6 and RoundingMode HALF_EVEN
  */
-operator fun BigDecimal.div(other: BigDecimal): BigDecimal = this.divide(other, 6, RoundingMode.HALF_EVEN)
+operator fun BigDecimal.div(other: BigDecimal): BigDecimal =
+    if (other.setScale(6, RoundingMode.HALF_EVEN) == zero().setScale(6, RoundingMode.HALF_EVEN)) other
+    else this.divide(other, 6, RoundingMode.HALF_EVEN)
 
 /**
  * Converts [this] clock time to decimal number

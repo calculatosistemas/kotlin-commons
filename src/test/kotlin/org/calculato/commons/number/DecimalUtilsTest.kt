@@ -18,6 +18,9 @@ class DecimalUtilsTest : StringSpec() {
             (x.div(y)) shouldBe BigDecimal.valueOf(48.387097)
             (x / y) shouldBe BigDecimal.valueOf(48.387097)
             (x / y * z) shouldBe BigDecimal.valueOf(1016.129037)
+
+            (15.toBigDecimal() / zero()) shouldBe zero()
+            (1.toBigDecimal() / 0.0.toBigDecimal()) shouldBe 0.00.toBigDecimal()
         }
         "Duration.toDecimal"{
             Duration.parse("PT12H33M").toDecimal() shouldBe 12.55.toBigDecimal().setScale(6)
